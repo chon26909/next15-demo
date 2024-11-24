@@ -1,27 +1,30 @@
-import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Kanit } from 'next/font/google';
+import './globals.css';
+import Providers from './providers';
 
 const kanit = Kanit({
-  weight: ["300", "400", "500", "700"],
-  style: ["normal", "italic"],
-  subsets: ["thai", "latin"],
-  display: "swap",
+    weight: ['300', '400', '500', '700'],
+    style: ['normal', 'italic'],
+    subsets: ['thai', 'latin'],
+    display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Next15 Demo",
-  description: "application",
+    title: 'Next15 Demo',
+    description: 'application',
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${kanit.className} antialiased`}>{children}</body>
-    </html>
-  );
+    return (
+        <html lang='en'>
+            <body className={`${kanit.className} antialiased`}>
+                <Providers>{children}</Providers>
+            </body>
+        </html>
+    );
 }
