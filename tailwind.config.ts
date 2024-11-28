@@ -12,6 +12,12 @@ export default {
                 primary: '#fe6132',
                 // secondary: 'var(--secondary-color)',
             },
+            gridTemplateColumns: {
+                fluid: 'repeat(auto-fit, minmax(250px, 1fr))',
+            },
+            backgroundImage: {
+                inherit: 'inherit',
+            },
         },
     },
     plugins: [],
